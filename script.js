@@ -21,7 +21,7 @@ function randomise(word) {
     //window.alert(length);
     let anagram = "";
 
-    while (anagram.length != word.length) {
+    while (anagram.length !== word.length) {
         let index = Math.floor(Math.random() * length);
         //window.alert(index);
         while (usedIndexes.includes(index)) {
@@ -34,9 +34,10 @@ function randomise(word) {
 
     }
 
-    if (word == anagram) {
+    if (word === anagram) {
         anagram = randomise(word);
     }
 
+    document.getElementById('result').textContent = anagram;
     return anagram;
 }
